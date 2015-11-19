@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FMDatabase.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,61 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+  
+  [self createTestData];
+  
+  
 }
+
+- (void)createTestData
+{
+  
+  NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+
+  FMDatabase *db = [FMDatabase databaseWithPath:[path stringByAppendingPathComponent:@"main.db"]];
+  
+  [db open];
+  [self populateDatabase:db];
+}
+
+- (void)populateDatabase:(FMDatabase *)db
+{
+  [db executeUpdate:@"create table test (a text, b text, c integer, d double, e double)"];
+  
+  [db beginTransaction];
+  int i = 0;
+  while (i++ < 20) {
+    [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+     @"hi'", // look!  I put in a ', and I'm not escaping it!
+     [NSString stringWithFormat:@"number %d", i],
+     [NSNumber numberWithInt:i],
+     [NSDate date],
+     [NSNumber numberWithFloat:2.2f]];
+  }
+  [db commit];
+  
+  // do it again, just because
+  [db beginTransaction];
+  i = 0;
+  while (i++ < 20) {
+    [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+     @"hi again'", // look!  I put in a ', and I'm not escaping it!
+     [NSString stringWithFormat:@"number %d", i],
+     [NSNumber numberWithInt:i],
+     [NSDate date],
+     [NSNumber numberWithFloat:2.2f]];
+  }
+  [db commit];
+  
+  [db executeUpdate:@"create table t3 (a somevalue)"];
+  
+  [db beginTransaction];
+  for (int i=0; i < 20; i++) {
+    [db executeUpdate:@"insert into t3 (a) values (?)", [NSNumber numberWithInt:i]];
+  }
+  [db commit];
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
