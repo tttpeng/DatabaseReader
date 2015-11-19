@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6719AEE70013497E4C87C7BE /* libPods-PTDatabaseReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C797E7FB5022AFD896F90D /* libPods-PTDatabaseReader.a */; };
 		776A67B11BFDD642000F2958 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B01BFDD642000F2958 /* main.m */; };
 		776A67B41BFDD642000F2958 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B31BFDD642000F2958 /* AppDelegate.m */; };
 		776A67B71BFDD642000F2958 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B61BFDD642000F2958 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D85D9A5AD802AAA42377A9A /* Pods-PTDatabaseReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTDatabaseReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader.debug.xcconfig"; sourceTree = "<group>"; };
 		776A67AC1BFDD642000F2958 /* PTDatabaseReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTDatabaseReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776A67B01BFDD642000F2958 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		776A67B21BFDD642000F2958 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTDatabaseReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTDatabaseReaderUITests.m; sourceTree = "<group>"; };
 		776A67D61BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78707C46E3D0A6C942096456 /* Pods-PTDatabaseReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTDatabaseReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader.release.xcconfig"; sourceTree = "<group>"; };
+		E5C797E7FB5022AFD896F90D /* libPods-PTDatabaseReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PTDatabaseReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6719AEE70013497E4C87C7BE /* libPods-PTDatabaseReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				776A67C81BFDD642000F2958 /* PTDatabaseReaderTests */,
 				776A67D31BFDD642000F2958 /* PTDatabaseReaderUITests */,
 				776A67AD1BFDD642000F2958 /* Products */,
+				8DC9737BD791D577B5A0BD4E /* Pods */,
+				ABA396EF77F9023F83460077 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +147,23 @@
 			path = PTDatabaseReaderUITests;
 			sourceTree = "<group>";
 		};
+		8DC9737BD791D577B5A0BD4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D85D9A5AD802AAA42377A9A /* Pods-PTDatabaseReader.debug.xcconfig */,
+				78707C46E3D0A6C942096456 /* Pods-PTDatabaseReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABA396EF77F9023F83460077 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5C797E7FB5022AFD896F90D /* libPods-PTDatabaseReader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 776A67D91BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReader" */;
 			buildPhases = (
+				E03A22A7D5CABEE30834BD27 /* Check Pods Manifest.lock */,
 				776A67A81BFDD642000F2958 /* Sources */,
 				776A67A91BFDD642000F2958 /* Frameworks */,
 				776A67AA1BFDD642000F2958 /* Resources */,
+				1318D896D0F2A80BD3DDBCA9 /* Embed Pods Frameworks */,
+				35129AF673F228764FC199AE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1318D896D0F2A80BD3DDBCA9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35129AF673F228764FC199AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E03A22A7D5CABEE30834BD27 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		776A67A81BFDD642000F2958 /* Sources */ = {
@@ -411,9 +486,11 @@
 		};
 		776A67DA1BFDD642000F2958 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D85D9A5AD802AAA42377A9A /* Pods-PTDatabaseReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PTDatabaseReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +499,11 @@
 		};
 		776A67DB1BFDD642000F2958 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78707C46E3D0A6C942096456 /* Pods-PTDatabaseReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PTDatabaseReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +577,7 @@
 				776A67DB1BFDD642000F2958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		776A67DC1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +586,7 @@
 				776A67DE1BFDD642000F2958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		776A67DF1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +595,7 @@
 				776A67E11BFDD642000F2958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
