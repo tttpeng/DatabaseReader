@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		776A67B11BFDD642000F2958 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B01BFDD642000F2958 /* main.m */; };
+		776A67B41BFDD642000F2958 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B31BFDD642000F2958 /* AppDelegate.m */; };
+		776A67B71BFDD642000F2958 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67B61BFDD642000F2958 /* ViewController.m */; };
+		776A67BA1BFDD642000F2958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776A67B81BFDD642000F2958 /* Main.storyboard */; };
+		776A67BC1BFDD642000F2958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776A67BB1BFDD642000F2958 /* Assets.xcassets */; };
+		776A67BF1BFDD642000F2958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */; };
+		776A67CA1BFDD642000F2958 /* PTDatabaseReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67C91BFDD642000F2958 /* PTDatabaseReaderTests.m */; };
+		776A67D51BFDD642000F2958 /* PTDatabaseReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		776A67C61BFDD642000F2958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 776A67A41BFDD642000F2958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 776A67AB1BFDD642000F2958;
+			remoteInfo = PTDatabaseReader;
+		};
+		776A67D11BFDD642000F2958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 776A67A41BFDD642000F2958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 776A67AB1BFDD642000F2958;
+			remoteInfo = PTDatabaseReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		776A67AC1BFDD642000F2958 /* PTDatabaseReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTDatabaseReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		776A67B01BFDD642000F2958 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		776A67B21BFDD642000F2958 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		776A67B31BFDD642000F2958 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		776A67B51BFDD642000F2958 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		776A67B61BFDD642000F2958 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		776A67B91BFDD642000F2958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		776A67BB1BFDD642000F2958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		776A67BE1BFDD642000F2958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		776A67C01BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776A67C51BFDD642000F2958 /* PTDatabaseReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTDatabaseReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		776A67C91BFDD642000F2958 /* PTDatabaseReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTDatabaseReaderTests.m; sourceTree = "<group>"; };
+		776A67CB1BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTDatabaseReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTDatabaseReaderUITests.m; sourceTree = "<group>"; };
+		776A67D61BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		776A67A91BFDD642000F2958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67C21BFDD642000F2958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67CD1BFDD642000F2958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		776A67A31BFDD642000F2958 = {
+			isa = PBXGroup;
+			children = (
+				776A67AE1BFDD642000F2958 /* PTDatabaseReader */,
+				776A67C81BFDD642000F2958 /* PTDatabaseReaderTests */,
+				776A67D31BFDD642000F2958 /* PTDatabaseReaderUITests */,
+				776A67AD1BFDD642000F2958 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		776A67AD1BFDD642000F2958 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				776A67AC1BFDD642000F2958 /* PTDatabaseReader.app */,
+				776A67C51BFDD642000F2958 /* PTDatabaseReaderTests.xctest */,
+				776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		776A67AE1BFDD642000F2958 /* PTDatabaseReader */ = {
+			isa = PBXGroup;
+			children = (
+				776A67B21BFDD642000F2958 /* AppDelegate.h */,
+				776A67B31BFDD642000F2958 /* AppDelegate.m */,
+				776A67B51BFDD642000F2958 /* ViewController.h */,
+				776A67B61BFDD642000F2958 /* ViewController.m */,
+				776A67B81BFDD642000F2958 /* Main.storyboard */,
+				776A67BB1BFDD642000F2958 /* Assets.xcassets */,
+				776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */,
+				776A67C01BFDD642000F2958 /* Info.plist */,
+				776A67AF1BFDD642000F2958 /* Supporting Files */,
+			);
+			path = PTDatabaseReader;
+			sourceTree = "<group>";
+		};
+		776A67AF1BFDD642000F2958 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				776A67B01BFDD642000F2958 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		776A67C81BFDD642000F2958 /* PTDatabaseReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				776A67C91BFDD642000F2958 /* PTDatabaseReaderTests.m */,
+				776A67CB1BFDD642000F2958 /* Info.plist */,
+			);
+			path = PTDatabaseReaderTests;
+			sourceTree = "<group>";
+		};
+		776A67D31BFDD642000F2958 /* PTDatabaseReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */,
+				776A67D61BFDD642000F2958 /* Info.plist */,
+			);
+			path = PTDatabaseReaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		776A67AB1BFDD642000F2958 /* PTDatabaseReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 776A67D91BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReader" */;
+			buildPhases = (
+				776A67A81BFDD642000F2958 /* Sources */,
+				776A67A91BFDD642000F2958 /* Frameworks */,
+				776A67AA1BFDD642000F2958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PTDatabaseReader;
+			productName = PTDatabaseReader;
+			productReference = 776A67AC1BFDD642000F2958 /* PTDatabaseReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		776A67C41BFDD642000F2958 /* PTDatabaseReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 776A67DC1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderTests" */;
+			buildPhases = (
+				776A67C11BFDD642000F2958 /* Sources */,
+				776A67C21BFDD642000F2958 /* Frameworks */,
+				776A67C31BFDD642000F2958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				776A67C71BFDD642000F2958 /* PBXTargetDependency */,
+			);
+			name = PTDatabaseReaderTests;
+			productName = PTDatabaseReaderTests;
+			productReference = 776A67C51BFDD642000F2958 /* PTDatabaseReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		776A67CF1BFDD642000F2958 /* PTDatabaseReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 776A67DF1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderUITests" */;
+			buildPhases = (
+				776A67CC1BFDD642000F2958 /* Sources */,
+				776A67CD1BFDD642000F2958 /* Frameworks */,
+				776A67CE1BFDD642000F2958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				776A67D21BFDD642000F2958 /* PBXTargetDependency */,
+			);
+			name = PTDatabaseReaderUITests;
+			productName = PTDatabaseReaderUITests;
+			productReference = 776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		776A67A41BFDD642000F2958 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Peng Tao";
+				TargetAttributes = {
+					776A67AB1BFDD642000F2958 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					776A67C41BFDD642000F2958 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 776A67AB1BFDD642000F2958;
+					};
+					776A67CF1BFDD642000F2958 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 776A67AB1BFDD642000F2958;
+					};
+				};
+			};
+			buildConfigurationList = 776A67A71BFDD642000F2958 /* Build configuration list for PBXProject "PTDatabaseReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 776A67A31BFDD642000F2958;
+			productRefGroup = 776A67AD1BFDD642000F2958 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				776A67AB1BFDD642000F2958 /* PTDatabaseReader */,
+				776A67C41BFDD642000F2958 /* PTDatabaseReaderTests */,
+				776A67CF1BFDD642000F2958 /* PTDatabaseReaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		776A67AA1BFDD642000F2958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776A67BF1BFDD642000F2958 /* LaunchScreen.storyboard in Resources */,
+				776A67BC1BFDD642000F2958 /* Assets.xcassets in Resources */,
+				776A67BA1BFDD642000F2958 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67C31BFDD642000F2958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67CE1BFDD642000F2958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		776A67A81BFDD642000F2958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776A67B71BFDD642000F2958 /* ViewController.m in Sources */,
+				776A67B41BFDD642000F2958 /* AppDelegate.m in Sources */,
+				776A67B11BFDD642000F2958 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67C11BFDD642000F2958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776A67CA1BFDD642000F2958 /* PTDatabaseReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776A67CC1BFDD642000F2958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776A67D51BFDD642000F2958 /* PTDatabaseReaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		776A67C71BFDD642000F2958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 776A67AB1BFDD642000F2958 /* PTDatabaseReader */;
+			targetProxy = 776A67C61BFDD642000F2958 /* PBXContainerItemProxy */;
+		};
+		776A67D21BFDD642000F2958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 776A67AB1BFDD642000F2958 /* PTDatabaseReader */;
+			targetProxy = 776A67D11BFDD642000F2958 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		776A67B81BFDD642000F2958 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				776A67B91BFDD642000F2958 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				776A67BE1BFDD642000F2958 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		776A67D71BFDD642000F2958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		776A67D81BFDD642000F2958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		776A67DA1BFDD642000F2958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PTDatabaseReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		776A67DB1BFDD642000F2958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PTDatabaseReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		776A67DD1BFDD642000F2958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PTDatabaseReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PTDatabaseReader.app/PTDatabaseReader";
+			};
+			name = Debug;
+		};
+		776A67DE1BFDD642000F2958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PTDatabaseReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PTDatabaseReader.app/PTDatabaseReader";
+			};
+			name = Release;
+		};
+		776A67E01BFDD642000F2958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PTDatabaseReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PTDatabaseReader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		776A67E11BFDD642000F2958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PTDatabaseReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.PTDatabaseReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PTDatabaseReader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		776A67A71BFDD642000F2958 /* Build configuration list for PBXProject "PTDatabaseReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776A67D71BFDD642000F2958 /* Debug */,
+				776A67D81BFDD642000F2958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		776A67D91BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776A67DA1BFDD642000F2958 /* Debug */,
+				776A67DB1BFDD642000F2958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		776A67DC1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776A67DD1BFDD642000F2958 /* Debug */,
+				776A67DE1BFDD642000F2958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		776A67DF1BFDD642000F2958 /* Build configuration list for PBXNativeTarget "PTDatabaseReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776A67E01BFDD642000F2958 /* Debug */,
+				776A67E11BFDD642000F2958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 776A67A41BFDD642000F2958 /* Project object */;
+}
