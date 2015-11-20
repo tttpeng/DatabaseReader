@@ -16,6 +16,7 @@
 		776A67BF1BFDD642000F2958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */; };
 		776A67CA1BFDD642000F2958 /* PTDatabaseReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67C91BFDD642000F2958 /* PTDatabaseReaderTests.m */; };
 		776A67D51BFDD642000F2958 /* PTDatabaseReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */; };
+		77ADBA511BFF2D030017124F /* PTMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ADBA501BFF2D030017124F /* PTMultiColumnTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTDatabaseReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTDatabaseReaderUITests.m; sourceTree = "<group>"; };
 		776A67D61BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77ADBA4F1BFF2D030017124F /* PTMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMultiColumnTableView.h; sourceTree = "<group>"; };
+		77ADBA501BFF2D030017124F /* PTMultiColumnTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMultiColumnTableView.m; sourceTree = "<group>"; };
 		78707C46E3D0A6C942096456 /* Pods-PTDatabaseReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTDatabaseReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader.release.xcconfig"; sourceTree = "<group>"; };
 		E5C797E7FB5022AFD896F90D /* libPods-PTDatabaseReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PTDatabaseReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +111,7 @@
 		776A67AE1BFDD642000F2958 /* PTDatabaseReader */ = {
 			isa = PBXGroup;
 			children = (
+				77ADBA4E1BFF2D030017124F /* PTMultiColumnTableView */,
 				776A67B21BFDD642000F2958 /* AppDelegate.h */,
 				776A67B31BFDD642000F2958 /* AppDelegate.m */,
 				776A67B51BFDD642000F2958 /* ViewController.h */,
@@ -145,6 +149,15 @@
 				776A67D61BFDD642000F2958 /* Info.plist */,
 			);
 			path = PTDatabaseReaderUITests;
+			sourceTree = "<group>";
+		};
+		77ADBA4E1BFF2D030017124F /* PTMultiColumnTableView */ = {
+			isa = PBXGroup;
+			children = (
+				77ADBA4F1BFF2D030017124F /* PTMultiColumnTableView.h */,
+				77ADBA501BFF2D030017124F /* PTMultiColumnTableView.m */,
+			);
+			path = PTMultiColumnTableView;
 			sourceTree = "<group>";
 		};
 		8DC9737BD791D577B5A0BD4E /* Pods */ = {
@@ -348,6 +361,7 @@
 				776A67B71BFDD642000F2958 /* ViewController.m in Sources */,
 				776A67B41BFDD642000F2958 /* AppDelegate.m in Sources */,
 				776A67B11BFDD642000F2958 /* main.m in Sources */,
+				77ADBA511BFF2D030017124F /* PTMultiColumnTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

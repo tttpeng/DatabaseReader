@@ -9,7 +9,13 @@
 #import "ViewController.h"
 #import "FMDatabase.h"
 
-@interface ViewController ()
+#import "PTMultiColumnTableView.h"
+
+@interface ViewController ()<PTMultiColumnTableViewDataSource>
+
+@property (nonatomic, strong) FMDatabase *db;
+@property (nonatomic, strong) NSArray *columnsArray;
+@property (nonatomic, strong) NSArray *contensArray;
 
 @end
 
@@ -19,6 +25,7 @@
   [super viewDidLoad];
   
   [self createTestData];
+  [self selectAllInfo];
   
   
 }
@@ -29,9 +36,64 @@
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
 
   FMDatabase *db = [FMDatabase databaseWithPath:[path stringByAppendingPathComponent:@"main.db"]];
+  _db = db;
+  [_db open];
+//  [self populateDatabase:db];
   
-  [db open];
-  [self populateDatabase:db];
+}
+
+- (void)displayDataInTableView
+{
+  
+  PTMultiColumnTableView *multiColumView = [[PTMultiColumnTableView alloc] initWithFrame:self.view.frame];
+  multiColumView.dataSource = self;
+  [self.view addSubview:multiColumView];
+  
+  
+  
+}
+
+- (void)selectAllInfo
+{
+  
+  NSMutableArray *allTables = [NSMutableArray array];
+  
+  FMResultSet *tableRs = [_db executeQueryWithFormat:@"select name from sqlite_master where type='table' order by name"];
+  
+  while ([tableRs next]) {
+    NSDictionary *d = [tableRs resultDictionary];
+    NSLog(@"tables --------- %@",d);
+    [allTables addObject:d[@"name"]];
+  };
+  
+  NSMutableArray *columns = [NSMutableArray array];
+  
+  NSString *sql = [NSString stringWithFormat:@"PRAGMA table_info('%@')",allTables[1]];
+
+  FMResultSet *rs = [_db executeQuery:sql];
+  NSLog(@"--->%@",rs.query);
+  while ([rs next]) {
+    NSDictionary *d = [rs resultDictionary];
+    NSLog(@"%@",d[@"name"]);
+    [columns addObject:d[@"name"]];
+  }
+  
+  self.columnsArray = columns;
+  
+  NSMutableArray *content  = [NSMutableArray array];
+  NSString *sql2 = [NSString stringWithFormat:@"SELECT * FROM %@",allTables[1]];
+  FMResultSet *contentRs = [_db executeQueryWithFormat:sql2];
+  while ([contentRs next]) {
+    NSDictionary *d = [contentRs resultDictionary];
+    [content addObject:d];
+    NSLog(@"%@",d);
+  }
+  
+  self.contensArray = content;
+  
+  [self displayDataInTableView];
+  
+  
 }
 
 - (void)populateDatabase:(FMDatabase *)db
@@ -73,9 +135,50 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+- (NSInteger)numberOfColumnsInTableView:(PTMultiColumnTableView *)tableView
+{
+  return self.columnsArray.count;
 }
+- (NSInteger)numberOfRowsInTableView:(PTMultiColumnTableView *)tableView
+{
+  return self.contensArray.count;
+}
+- (NSString *)columnNameInColumn:(NSInteger)column
+{
+  return self.columnsArray[column];
+}
+- (NSString *)rowNameInRow:(NSInteger)row
+{
+  
+  return [NSString stringWithFormat:@"%ld",(long)row];
+  
+}
+- (NSString *)contentAtColumn:(NSInteger)column row:(NSInteger)row
+{
+  if (self.contensArray.count > row) {
+    NSDictionary *dic = self.contensArray[row];
+    if (self.contensArray.count > column) {
+      NSLog(@"----######--->%@",self.columnsArray[column]);
+      NSLog(@"---------->>%@",dic);
+        return [NSString stringWithFormat:@"%@",[dic objectForKey:self.columnsArray[column]]];
+    }
+  }
+  return @"xxxxxxx";
+  
+  
+  
+}
+
+- (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView heightForContentCellInRow:(NSInteger)row
+{
+  return 100;
+}
+
+- (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView widthForContentCellInColumn:(NSInteger)column
+{
+  return 100;
+}
+
+
 
 @end
