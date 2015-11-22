@@ -101,18 +101,17 @@
   }
   CGFloat x = 0.0;
   CGFloat w = 0.0;
-  NSLog(@"cćcccccc");
   for (int i = 0; i < [self.dataSource numberOfColumnsInTableView:self] ; i++) {
-    NSLog(@"dddddd");
     w = [self.dataSource multiColumnTableView:self heightForContentCellInRow:i];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, w , 50)];
     view.backgroundColor = [self randomColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, 0, w, 49)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, w, 49)];
     label.text = [self.dataSource columnNameInColumn:i];
     label.backgroundColor = [UIColor redColor];
     [view addSubview:label];
     [self.headerScrollView addSubview:view];
     x = x + w + 1;
+    NSLog(@"-----%f-->%f",w,x);
   }
 }
 
@@ -135,9 +134,7 @@
     CGFloat x = 0.0;
     CGFloat w = 0.0;
     CGFloat h = [self.dataSource multiColumnTableView:self heightForContentCellInRow:indexPath.row];
-    NSLog(@"aaa");
     for (int i = 0; i < [self.dataSource numberOfColumnsInTableView:self] ; i++) {
-      NSLog(@"bbb");
       w = [self.dataSource multiColumnTableView:self heightForContentCellInRow:i];
       UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, w , h - 1)];
       view.backgroundColor = [UIColor whiteColor];

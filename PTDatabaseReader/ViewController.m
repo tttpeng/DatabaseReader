@@ -62,7 +62,7 @@
   
   while ([tableRs next]) {
     NSDictionary *d = [tableRs resultDictionary];
-    NSLog(@"tables --------- %@",d);
+//    NSLog(@"tables --------- %@",d);
     [allTables addObject:d[@"name"]];
   };
   
@@ -71,10 +71,10 @@
   NSString *sql = [NSString stringWithFormat:@"PRAGMA table_info('%@')",allTables[1]];
 
   FMResultSet *rs = [_db executeQuery:sql];
-  NSLog(@"--->%@",rs.query);
+//  NSLog(@"--->%@",rs.query);
   while ([rs next]) {
     NSDictionary *d = [rs resultDictionary];
-    NSLog(@"%@",d[@"name"]);
+//    NSLog(@"%@",d[@"name"]);
     [columns addObject:d[@"name"]];
   }
   
@@ -86,7 +86,7 @@
   while ([contentRs next]) {
     NSDictionary *d = [contentRs resultDictionary];
     [content addObject:d];
-    NSLog(@"%@",d);
+//    NSLog(@"%@",d);
   }
   
   self.contensArray = content;
@@ -145,6 +145,7 @@
 }
 - (NSString *)columnNameInColumn:(NSInteger)column
 {
+  NSLog(@"----->%@",self.columnsArray[column]);
   return self.columnsArray[column];
 }
 - (NSString *)rowNameInRow:(NSInteger)row
@@ -158,8 +159,8 @@
   if (self.contensArray.count > row) {
     NSDictionary *dic = self.contensArray[row];
     if (self.contensArray.count > column) {
-      NSLog(@"----######--->%@",self.columnsArray[column]);
-      NSLog(@"---------->>%@",dic);
+//      NSLog(@"----######--->%@",self.columnsArray[column]);
+//      NSLog(@"---------->>%@",dic);
         return [NSString stringWithFormat:@"%@",[dic objectForKey:self.columnsArray[column]]];
     }
   }
