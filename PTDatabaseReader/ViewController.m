@@ -44,14 +44,13 @@
 
 - (void)displayDataInTableView
 {
-  
   PTMultiColumnTableView *multiColumView = [[PTMultiColumnTableView alloc] initWithFrame:self.view.frame];
   multiColumView.dataSource = self;
   [self.view addSubview:multiColumView];
   
-  
-  
 }
+
+
 
 - (void)selectAllInfo
 {
@@ -172,7 +171,7 @@
 
 - (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView heightForContentCellInRow:(NSInteger)row
 {
-  return 100;
+  return 40;
 }
 
 - (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView widthForContentCellInColumn:(NSInteger)column

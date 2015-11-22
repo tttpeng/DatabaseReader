@@ -28,7 +28,7 @@
 
 @interface PTMultiColumnTableView : UIView
 
-@property (nonatomic, strong) UITableView *tableView;
+//@property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, weak) id<PTMultiColumnTableViewDataSource>dataSource;
 
