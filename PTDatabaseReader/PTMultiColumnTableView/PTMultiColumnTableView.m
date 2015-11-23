@@ -171,7 +171,8 @@ static const CGFloat kColumnMargin = 1;
   if (tableView != self.leftTableView) {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contentViewCellID"];
     if (!cell) {
-      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"contentViewCellID"];
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                    reuseIdentifier:@"contentViewCellID"];
     }
     for (UIView *view  in cell.contentView.subviews) {
       [view removeFromSuperview];
@@ -204,7 +205,8 @@ static const CGFloat kColumnMargin = 1;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftHeaderViewCellID"];
     if (!cell) {
-      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"leftHeaderViewCellID"];
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                    reuseIdentifier:@"leftHeaderViewCellID"];
     }
 
     
@@ -263,6 +265,22 @@ static const CGFloat kColumnMargin = 1;
   }
 }
 
+#pragma mark -
+#pragma mark UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (tableView == self.leftTableView) {
+    [self.contentTableView selectRowAtIndexPath:indexPath
+                                       animated:NO
+                                 scrollPosition:UITableViewScrollPositionNone];
+  }
+  else if (tableView == self.contentTableView) {
+    [self.leftTableView selectRowAtIndexPath:indexPath
+                                    animated:NO
+                              scrollPosition:UITableViewScrollPositionNone];
+  }
+}
 
 #pragma mark -
 #pragma mark DataSource Accessor
@@ -358,7 +376,7 @@ static const CGFloat kColumnMargin = 1;
   CGFloat red = (CGFloat)random()/(CGFloat)RAND_MAX;
   CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
   CGFloat blue = (CGFloat)random()/(CGFloat)RAND_MAX;
-  return [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];//alpha为1.0,颜色完全不透明
+  return [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
 }
 
 @end
