@@ -28,6 +28,7 @@
   [self selectAllInfo];
   
   
+  self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)createTestData
@@ -44,11 +45,12 @@
 
 - (void)displayDataInTableView
 {
-  PTMultiColumnTableView *multiColumView = [[PTMultiColumnTableView alloc] initWithFrame:self.view.frame];
+  PTMultiColumnTableView *multiColumView = [[PTMultiColumnTableView alloc] initWithFrame:CGRectMake(100, 100, 400, 400)];
   multiColumView.dataSource = self;
   [self.view addSubview:multiColumView];
   
 }
+
 
 
 
@@ -81,7 +83,7 @@
   
   NSMutableArray *content  = [NSMutableArray array];
   NSString *sql2 = [NSString stringWithFormat:@"SELECT * FROM %@",allTables[1]];
-  FMResultSet *contentRs = [_db executeQueryWithFormat:sql2];
+  FMResultSet *contentRs = [_db executeQuery:sql2];
   while ([contentRs next]) {
     NSDictionary *d = [contentRs resultDictionary];
     [content addObject:d];
@@ -180,5 +182,14 @@
 }
 
 
+- (CGFloat)heightForTopHeaderInTableView:(PTMultiColumnTableView *)tableView
+{
+  return 50;
+}
+
+- (CGFloat)WidthForLeftHeaderInTableView:(PTMultiColumnTableView *)tableView
+{
+  return 50;
+}
 
 @end

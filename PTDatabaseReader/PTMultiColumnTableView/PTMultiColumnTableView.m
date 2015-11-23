@@ -8,6 +8,14 @@
 
 #import "PTMultiColumnTableView.h"
 
+
+typedef NS_ENUM(NSInteger,UIViewSeparatorLocation) {
+  UIViewSeparatorLocationTop,
+  UIViewSeparatorLocationLeft,
+  UIViewSeparatorLocationBottom,
+  UIViewSeparatorLocationRight
+};
+
 @interface PTMultiColumnTableView ()
 <UITableViewDataSource, UITableViewDelegate,UIScrollViewDelegate>
 
@@ -26,10 +34,7 @@ static const CGFloat kColumnMargin = 1;
 {
   self = [super initWithFrame:frame];
   if (self) {
-    
-    [self loadHeaderScrollView];
-    [self loadContentScrollView];
-    [self loadLeftView];
+    [self loadUI];
   }
   return self;
 }
@@ -45,8 +50,10 @@ static const CGFloat kColumnMargin = 1;
 {
   [super layoutSubviews];
   
-//  CGFloat width  = self.frame.size.width;
+  CGFloat width  = self.frame.size.width;
   CGFloat height = self.frame.size.height;
+  CGFloat topheaderHeight = [self topHeaderHeight];
+  CGFloat leftHeaderWidth = [self leftHeaderWidth];
   
   CGFloat contentWidth = 0.0;
   NSInteger rowsCount = [self.dataSource numberOfColumnsInTableView:self];
@@ -54,11 +61,21 @@ static const CGFloat kColumnMargin = 1;
     contentWidth += [self.dataSource multiColumnTableView:self widthForContentCellInColumn:i];
   }
   
-  self.contentTableView.frame = CGRectMake(0, 0, contentWidth + [self numberOfColumns] * [self columnMargin] , height - 50);
+  self.leftTableView.frame           = CGRectMake(0, topheaderHeight, leftHeaderWidth, height - topheaderHeight);
+  self.headerScrollView.frame        = CGRectMake(leftHeaderWidth, 0, width - leftHeaderWidth, topheaderHeight);
+  self.contentTableView.frame        = CGRectMake(0, 0, contentWidth + [self numberOfColumns] * [self columnMargin] , height - 50);
+  self.contentScrollView.frame       = CGRectMake(leftHeaderWidth, topheaderHeight, width - leftHeaderWidth, height - topheaderHeight);
   self.contentScrollView.contentSize = self.contentTableView.frame.size;
+  
 }
 
 
+- (void)loadUI
+{
+  [self loadHeaderScrollView];
+  [self loadContentScrollView];
+  [self loadLeftView];
+}
 
 - (void)reloadData
 {
@@ -72,40 +89,39 @@ static const CGFloat kColumnMargin = 1;
 
 - (void)loadHeaderScrollView
 {
-  UIScrollView *headerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(100, 0, self.frame.size.width - 100, 50)];
-
-  headerScrollView.contentSize = CGSizeMake(2000, 50);
-  headerScrollView.delegate = self;
+  UIScrollView *headerScrollView = [[UIScrollView alloc] init];
+  headerScrollView.delegate      = self;
+  self.headerScrollView          = headerScrollView;
   [self addSubview:headerScrollView];
-  self.headerScrollView = headerScrollView;
 }
 
 - (void)loadContentScrollView
 {
   
-  UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(100, 50, self.frame.size.width - 50, self.frame.size.height - 50)];
-  scrollView.bounces = NO;
-  [self addSubview:scrollView];
-  scrollView.delegate = self;
-  UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 2000, scrollView.frame.size.height)];
-  tableView.delegate = self;
-  tableView.dataSource = self;
-  tableView.bounces = NO;
+  UIScrollView *scrollView = [[UIScrollView alloc] init];
+  scrollView.bounces       = NO;
+  scrollView.delegate      = self;
+  
+  UITableView *tableView   = [[UITableView alloc] init];
+  tableView.delegate       = self;
+  tableView.dataSource     = self;
+  tableView.bounces        = NO;
   tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-  self.contentTableView = tableView;
+  
+  [self addSubview:scrollView];
   [scrollView addSubview:tableView];
-  scrollView.contentSize = tableView.frame.size;
+  
   self.contentScrollView = scrollView;
+  self.contentTableView    = tableView;
   
 }
 
 - (void)loadLeftView
 {
-  UITableView *leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, 100, self.contentScrollView.contentSize.height)];
-  leftTableView.backgroundColor = [UIColor cyanColor];
-  
+  UITableView *leftTableView = [[UITableView alloc] init];
   leftTableView.delegate = self;
   leftTableView.dataSource = self;
+  leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   [self addSubview:leftTableView];
   self.leftTableView = leftTableView;
 }
@@ -124,12 +140,16 @@ static const CGFloat kColumnMargin = 1;
   CGFloat w = 0.0;
   for (int i = 0; i < [self numberOfColumns] ; i++) {
     w = [self contentWidthForColumn:i] + [self columnMargin];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, w , 50)];
+    UIView *view = [[UIView alloc] initWithFrame:
+                    CGRectMake(x, 0, w , [self topHeaderHeight])];
     view.backgroundColor = [UIColor lightGrayColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, w - [self columnMargin], 49)];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:
+                      CGRectMake(0, 0, w - [self columnMargin], [self topHeaderHeight] - 1 )];
     label.backgroundColor = [UIColor whiteColor];
     label.text = [self.dataSource columnNameInColumn:i];
     label.textAlignment = NSTextAlignmentCenter;
+    
     [view addSubview:label];
     [self.headerScrollView addSubview:view];
     x = x + w;
@@ -149,7 +169,13 @@ static const CGFloat kColumnMargin = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (tableView != self.leftTableView) {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contentViewCellID"];
+    if (!cell) {
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"contentViewCellID"];
+    }
+    for (UIView *view  in cell.contentView.subviews) {
+      [view removeFromSuperview];
+    }
     cell.backgroundColor = [UIColor lightGrayColor];
     
     CGFloat x = 0.0;
@@ -157,7 +183,7 @@ static const CGFloat kColumnMargin = 1;
     CGFloat h = [self contentHeightForRow:indexPath.row];
     for (int i = 0; i < [self numberOfColumns] ; i++) {
       w = [self contentWidthForColumn:i];
-
+      
       UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, w , h - 1)];
       view.backgroundColor = [UIColor whiteColor];
       
@@ -170,22 +196,40 @@ static const CGFloat kColumnMargin = 1;
       if (i == [self.dataSource numberOfColumnsInTableView:self] - 1) {
         w += 1;
       }
-
       [cell.contentView addSubview:view];
     }
     return cell;
   }
   else {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    cell.textLabel.text = [self.dataSource rowNameInRow:indexPath.row];
-//    cell.backgroundColor = [self randomColor];
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, [self contentHeightForRow:indexPath.row] - 1, 100 , 1)];
-    line.backgroundColor = [UIColor lightGrayColor];
     
-    UIView *rightLine = [[UIView alloc] initWithFrame:CGRectMake(99, 0, 1, [self contentHeightForRow:indexPath.row])];
-    rightLine.backgroundColor = [UIColor lightGrayColor];
-    [cell addSubview:rightLine];
-    [cell addSubview:line];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftHeaderViewCellID"];
+    if (!cell) {
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"leftHeaderViewCellID"];
+    }
+
+    
+    for (UIView *view  in cell.contentView.subviews) {
+      [view removeFromSuperview];
+    }
+    
+    CGFloat height = [self contentHeightForRow:indexPath.row];
+    CGFloat width  = [self leftHeaderWidth];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    view.backgroundColor = [UIColor whiteColor];
+    [cell.contentView addSubview:view];
+    
+    [self addSeparatorLineInView:view
+                        andWidth:1
+                     andLocation:UIViewSeparatorLocationRight
+                        andColor:[UIColor lightGrayColor]];
+    [self addSeparatorLineInView:view
+                        andWidth:1
+                     andLocation:UIViewSeparatorLocationBottom
+                        andColor:[UIColor lightGrayColor]];
+    
+    cell.textLabel.text = [self.dataSource rowNameInRow:indexPath.row];
+    
     return cell;
     
   }
@@ -218,7 +262,6 @@ static const CGFloat kColumnMargin = 1;
     self.leftTableView.contentOffset = scrollView.contentOffset;
   }
 }
-
 
 
 #pragma mark -
@@ -259,9 +302,55 @@ static const CGFloat kColumnMargin = 1;
   return [self.dataSource multiColumnTableView:self heightForContentCellInRow:row];
 }
 
+- (CGFloat)topHeaderHeight
+{
+  return [self.dataSource heightForTopHeaderInTableView:self];
+}
+
+- (CGFloat)leftHeaderWidth
+{
+  return [self.dataSource WidthForLeftHeaderInTableView:self];
+}
+
 - (CGFloat)columnMargin
 {
   return kColumnMargin;
+}
+
+
+#pragma mark -
+#pragma mark - Private
+
+
+
+- (void)addSeparatorLineInView:(UIView *)view
+                      andWidth:(CGFloat)lineWidth
+                   andLocation:(UIViewSeparatorLocation)location
+                      andColor:(UIColor *)color
+{
+  CGFloat width  = view.frame.size.width;
+  CGFloat height = view.frame.size.height;
+  UIView *line = [[UIView alloc] init];
+  line.backgroundColor = color;
+  switch (location) {
+    case UIViewSeparatorLocationTop:
+      line.frame = CGRectMake(0, 0, width, lineWidth);
+      [view addSubview:line];
+      break;
+    case UIViewSeparatorLocationLeft:
+      line.frame = CGRectMake(0, 0, lineWidth, height);
+      [view addSubview:line];
+      break;
+    case UIViewSeparatorLocationBottom:
+      line.frame = CGRectMake(0, height - lineWidth, width, lineWidth);
+      [view addSubview:line];
+      break;
+    case UIViewSeparatorLocationRight:
+      line.frame = CGRectMake(width - lineWidth, 0, lineWidth, height);
+      [view addSubview:line];
+      break;
+  }
+  
 }
 
 - (UIColor *)randomColor{

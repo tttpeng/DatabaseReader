@@ -22,6 +22,8 @@
 
 - (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView widthForContentCellInColumn:(NSInteger)column;
 - (CGFloat)multiColumnTableView:(PTMultiColumnTableView *)tableView heightForContentCellInRow:(NSInteger)row;
+- (CGFloat)heightForTopHeaderInTableView:(PTMultiColumnTableView *)tableView;
+- (CGFloat)WidthForLeftHeaderInTableView:(PTMultiColumnTableView *)tableView;
 
 @end
 
