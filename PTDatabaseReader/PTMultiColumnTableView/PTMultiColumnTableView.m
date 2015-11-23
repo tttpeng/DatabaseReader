@@ -45,7 +45,6 @@ static const CGFloat kColumnMargin = 1;
   [self reloadData];
 }
 
-
 - (void)layoutSubviews
 {
   [super layoutSubviews];
@@ -79,11 +78,10 @@ static const CGFloat kColumnMargin = 1;
 
 - (void)reloadData
 {
-  [self loadHeaderData];
   [self loadLeftViewData];
   [self loadContentData];
+  [self loadHeaderData];
 }
-
 
 #pragma mark - UI
 
@@ -147,7 +145,7 @@ static const CGFloat kColumnMargin = 1;
     UILabel *label = [[UILabel alloc] initWithFrame:
                       CGRectMake(0, 0, w - [self columnMargin], [self topHeaderHeight] - 1 )];
     label.backgroundColor = [UIColor whiteColor];
-    label.text = [self.dataSource columnNameInColumn:i];
+    label.text = [self columnTitleForColumn:i];
     label.textAlignment = NSTextAlignmentCenter;
     
     [view addSubview:label];

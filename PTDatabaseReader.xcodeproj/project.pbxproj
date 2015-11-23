@@ -16,6 +16,9 @@
 		776A67BF1BFDD642000F2958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */; };
 		776A67CA1BFDD642000F2958 /* PTDatabaseReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67C91BFDD642000F2958 /* PTDatabaseReaderTests.m */; };
 		776A67D51BFDD642000F2958 /* PTDatabaseReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */; };
+		776A9DBD1C03195C00E7DA06 /* PTTableListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9DBC1C03195C00E7DA06 /* PTTableListViewController.m */; };
+		776A9DC01C031A4B00E7DA06 /* PTDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9DBF1C031A4B00E7DA06 /* PTDatabaseManager.m */; };
+		776A9DC31C031ECA00E7DA06 /* PTTableContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9DC21C031ECA00E7DA06 /* PTTableContentViewController.m */; };
 		77ADBA511BFF2D030017124F /* PTMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ADBA501BFF2D030017124F /* PTMultiColumnTableView.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,12 @@
 		776A67D01BFDD642000F2958 /* PTDatabaseReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTDatabaseReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		776A67D41BFDD642000F2958 /* PTDatabaseReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTDatabaseReaderUITests.m; sourceTree = "<group>"; };
 		776A67D61BFDD642000F2958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776A9DBB1C03195C00E7DA06 /* PTTableListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableListViewController.h; sourceTree = "<group>"; };
+		776A9DBC1C03195C00E7DA06 /* PTTableListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableListViewController.m; sourceTree = "<group>"; };
+		776A9DBE1C031A4B00E7DA06 /* PTDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTDatabaseManager.h; path = PTMultiColumnTableView/PTDatabaseManager.h; sourceTree = "<group>"; };
+		776A9DBF1C031A4B00E7DA06 /* PTDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTDatabaseManager.m; path = PTMultiColumnTableView/PTDatabaseManager.m; sourceTree = "<group>"; };
+		776A9DC11C031ECA00E7DA06 /* PTTableContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableContentViewController.h; sourceTree = "<group>"; };
+		776A9DC21C031ECA00E7DA06 /* PTTableContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableContentViewController.m; sourceTree = "<group>"; };
 		77ADBA4F1BFF2D030017124F /* PTMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMultiColumnTableView.h; sourceTree = "<group>"; };
 		77ADBA501BFF2D030017124F /* PTMultiColumnTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMultiColumnTableView.m; sourceTree = "<group>"; };
 		78707C46E3D0A6C942096456 /* Pods-PTDatabaseReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTDatabaseReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTDatabaseReader/Pods-PTDatabaseReader.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,8 +123,14 @@
 				77ADBA4E1BFF2D030017124F /* PTMultiColumnTableView */,
 				776A67B21BFDD642000F2958 /* AppDelegate.h */,
 				776A67B31BFDD642000F2958 /* AppDelegate.m */,
+				776A9DBE1C031A4B00E7DA06 /* PTDatabaseManager.h */,
+				776A9DBF1C031A4B00E7DA06 /* PTDatabaseManager.m */,
 				776A67B51BFDD642000F2958 /* ViewController.h */,
 				776A67B61BFDD642000F2958 /* ViewController.m */,
+				776A9DBB1C03195C00E7DA06 /* PTTableListViewController.h */,
+				776A9DBC1C03195C00E7DA06 /* PTTableListViewController.m */,
+				776A9DC11C031ECA00E7DA06 /* PTTableContentViewController.h */,
+				776A9DC21C031ECA00E7DA06 /* PTTableContentViewController.m */,
 				776A67B81BFDD642000F2958 /* Main.storyboard */,
 				776A67BB1BFDD642000F2958 /* Assets.xcassets */,
 				776A67BD1BFDD642000F2958 /* LaunchScreen.storyboard */,
@@ -359,9 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776A9DC31C031ECA00E7DA06 /* PTTableContentViewController.m in Sources */,
 				776A67B71BFDD642000F2958 /* ViewController.m in Sources */,
+				776A9DBD1C03195C00E7DA06 /* PTTableListViewController.m in Sources */,
 				776A67B41BFDD642000F2958 /* AppDelegate.m in Sources */,
 				776A67B11BFDD642000F2958 /* main.m in Sources */,
+				776A9DC01C031A4B00E7DA06 /* PTDatabaseManager.m in Sources */,
 				77ADBA511BFF2D030017124F /* PTMultiColumnTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
